@@ -5,13 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 
+Version 2.2.2 or Later
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+Make sure you have PostgreSQL 9.1 or Later installed
 
 * Database initialization
 
