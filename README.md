@@ -1,29 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+### Dependências
 
 * Ruby version 
 Version 2.2.2 or Later
 
-* System dependencies
-
-* Configuration
-
 * Database creation
 Make sure you have PostgreSQL 9.1 or Later installed
 
-* Database initialization
+# O Projeto
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # Stack Helper
 
 ### O projeto
