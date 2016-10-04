@@ -12,7 +12,7 @@ Make sure you have PostgreSQL 9.1 or Later installed
 
 ### Stack Helper
 
-### O projeto
+#### O projeto
 Um sistema Open Source para que desenvolvedores de software possam solucionar suas dúvidas com a ajuda de desenvolvedores com mais experiéncia no ponto de dúvida.
 
 **Pontos importantes**
