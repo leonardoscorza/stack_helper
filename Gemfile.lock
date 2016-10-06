@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/mshibuya/remotipart.git
-  revision: 7e244e78e148430b7720e6cf8f86263d6a1dfddf
+  revision: cd653ddc43bb09767b8f2802d6e27b3e00ef992f
   specs:
-    remotipart (1.3.0)
+    remotipart (1.3.1)
 
 GIT
   remote: git://github.com/sferik/rails_admin.git
@@ -119,12 +119,10 @@ GEM
     multi_json (1.12.1)
     nested_form (0.3.2)
     nio4r (1.2.1)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pg (0.19.0)
-    pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
     rack-pjax (1.0.0)
