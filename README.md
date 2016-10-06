@@ -2,7 +2,7 @@
 
 ### Dependências
 
-* Ruby version 
+* Ruby version
 Version 2.2.2 or Later
 
 * Database creation
@@ -21,3 +21,34 @@ Um sistema Open Source para que desenvolvedores de software possam solucionar su
 * O sistema vai permitir que os usuários façam suas perguntas associadas a hashtags, aumentando assim suas chances de ter suas dúvidas respondidas.
 * Vai ser possível filtrar as perguntas e respostas do sistema através de Hashtags.
 * Os desenvolvedores que tiverem mais respostas vão ficar no ranking na página inicial do site associados aos seus botões de doação, aumentando assim as chances que recebam essas doações.
+
+
+### Quer ajudar o projeto?
+Dê um fork no projeto
+
+Vá no repositorio que o git criou e copie a url, digite git clone e cole o link
+
+git clone https://github.com/seu-nome/stack_helper
+
+Entre no diretório
+$ cd stack_helper
+
+Faça suas alteraçoes
+
+Crie um branch (ramificação) do projeto
+
+(comando que fecha a master)	$ git checkout master
+
+(comando que cria a branch)	 $ git branch nome-da-branch
+
+(comando git remote -v para sincronizar seu fork) $ git remote add upstream https://github.com/...
+
+Para subir o projeto
+
+(comando que adiciona as alteraçoes feitas) $ git add .
+
+(comitando a alteração) $ git commit -m 'Mensagem sobre a modificação'
+
+(dando o push no projeto para que seja feito o pull request) git push origin nome-da-branch
+
+e por ultimo vá até o seu repositório no github (parte gráfica) e faça o pull request.
