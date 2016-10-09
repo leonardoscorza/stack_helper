@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :question
-
+  root to: 'home#index'
   get 'home/index'
   get 'home/about'
 end
