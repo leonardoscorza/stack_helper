@@ -8,6 +8,16 @@ Version 2.2.2 or Later
 * Database creation
 Make sure you have PostgreSQL 9.1 or Later installed
 
+* Registro com Facebook
+Para fazer o login através do Facebook é necessario realizar o import das variaveis localmente.
+$ export FACEBOOK_APP_SECRET=secret_face
+$ export FACEBOOK_APP_ID=id_face
+
+O valor das variaveis acima "secret_face e id_face" deveram ser substituidas pelas chave de sua aplicação criada no Facebook.
+sobre como criar uma aplicação no Facebook e integrar com a sua app, assista:
+http://onebitcode.com/criando-autenticacao-com-o-facebook-em-10-minutos-devise-omniauth/
+
+
 # O Projeto
 
 ### Stack Helper
