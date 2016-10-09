@@ -36,15 +36,6 @@ ActiveRecord::Schema.define(version: 20161008221741) do
     t.index ["question_id"], name: "index_hashtags_questions_on_question_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "likable_id"
-    t.integer  "likable_type"
-    t.boolean  "kind"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "notifications", force: :cascade do |t|
     t.integer  "hashtag_id"
     t.integer  "user_id"
