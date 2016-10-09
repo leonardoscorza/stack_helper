@@ -13,3 +13,9 @@ module SocialStack
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# Set default locale
+I18n.enforce_available_locales = false
+I18n.available_locales = ['pt-BR', :en]
+# Set default locale
+# I18n.default_locale = 'pt-BR'

@@ -35,6 +35,13 @@ gem 'devise'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 
+# Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+# I18n for Devise
+gem 'devise-i18n'
+# I18n for Rails Admin
+gem 'rails_admin-i18n'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

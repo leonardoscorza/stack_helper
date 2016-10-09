@@ -1,0 +1,49 @@
+'pt-BR':
+  activerecord:
+    models:
+      answer: "Resposta"
+      hashtag: "Hashtag"
+      like: "Like"
+      notification: "Notificação"
+      question: "Pergunta"
+    attributes:
+      answer:
+        id: "Identificador"
+        question_id: "Pergunta"
+        user_id: "Usuário"
+        text: "Texto"
+        answer_father_id: "Resposta pai"
+        user_mark_as_right: "Melhor resposta"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      hashtag:
+        id: "Identificador"
+        text: "Texto"
+        question_id: "Pergunta"
+        user_id: "Usuário"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      like:
+        id: "Identificador"
+        user_id: "Usuário"
+        kind: "Tipo"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      notification:
+        id: "Identificador"
+        user_id: "Usuário"
+        frequency: "Frequência"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      question:
+        id: "Identificador"
+        user_id: "Usuário"
+        title: "Título"
+        text: "Texto"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      user:
+        id: "Identificador"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        email: "E-mail"
