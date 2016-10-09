@@ -1,6 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
+  def new
+    @question = Question.new
+  end
 
   def create
   end
