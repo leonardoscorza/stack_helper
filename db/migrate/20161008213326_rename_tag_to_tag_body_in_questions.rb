@@ -4,6 +4,6 @@ class RenameTagToTagBodyInQuestions < ActiveRecord::Migration[5.0]
   end
 
   def down
-    rename_column :hashtags, :tag_body, :tag
+    rename_column :questions, :tag_body, :tag
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  subject { described_class.new(user_id: 1, title: "Examle", text: "Some text") }
+  subject { described_class.new(title: "Examle", text: "Some text", tag_body: "#ruby #rails") }
 
   describe 'Validations' do
 		it 'is valid with valid attributes' do		
@@ -15,6 +15,11 @@ RSpec.describe Question, type: :model do
 
 		it 'is not valid without an text' do
 			subject.text = nil
+			expect(subject).to_not be_valid
+		end
+
+		it 'is not valid without an tag' do
+			subject.tag_body = nil
 			expect(subject).to_not be_valid
 		end
 	end
