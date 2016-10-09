@@ -3,8 +3,17 @@
 
 <div class="col-md-3 col-sm-4">
 	<div class="card card-block">
-	  <h4 class="card-title">Home#index</h4>
-	  <p class="card-text">Nossa primeira página</p>
-	  <%= link_to 'About', home_about_path %>
-	</div>
+		<h4 class="card-title">Home#index</h4>
+		<p class="card-text">Nossa primeira página</p>
+<%= link_to 'About', home_about_path %>
+
+<p>
+  Olá <%= current_user.email %>
+  <% if current_user.image.present? %>
+  <%= image_tag(current_user.image, size: "40") %>
+  <% end %>
+</p>
+</br>
+<%= link_to "Sair", destroy_user_session_path, method: :delete %>
+</div>
 </div>
