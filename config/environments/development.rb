@@ -1,7 +1,6 @@
 Rails.application.configure do
   # Keys Social Register
-  ENV['FACEBOOK_APP_ID']='764865100337716'
-  ENV['FACEBOOK_APP_SECRET']='207f89e10444ca21ee49496b44f6befd'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
