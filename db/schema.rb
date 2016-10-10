@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009145357) do
+ActiveRecord::Schema.define(version: 20161009183438) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -23,20 +23,16 @@ ActiveRecord::Schema.define(version: 20161009145357) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string   "text"
-    t.integer  "question_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "likable_id"
-    t.integer  "likable_type"
-    t.boolean  "kind"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "hashtags_questions", id: false, force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "hashtag_id"
+    t.index ["hashtag_id"], name: "index_hashtags_questions_on_hashtag_id"
+    t.index ["question_id"], name: "index_hashtags_questions_on_question_id"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -53,6 +49,7 @@ ActiveRecord::Schema.define(version: 20161009145357) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "tag_body"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,12 +65,24 @@ ActiveRecord::Schema.define(version: 20161009145357) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "image"
     t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
+    t.string   "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string   "votable_type"
+    t.integer  "votable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
 end
