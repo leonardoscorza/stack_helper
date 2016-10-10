@@ -7,7 +7,6 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
   end
->>>>>>> upstream/master
 
   def create
   end
