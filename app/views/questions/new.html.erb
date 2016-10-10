@@ -1,2 +1,16 @@
-<h1>Question#index</h1>
-<p>Find me in app/views/question/index.html.erb</p>
+<div class="col-md-8">
+  <%= form_for(@question) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :title, "Título" %>
+    <%= f.text_field :title, class: 'form-control' %>
+
+    <%= f.label :text, "Pergunta" %>
+    <%= f.text_area :text, class: 'form-control' %>
+
+    <%= f.label :tag_body, "Tags" %>
+    <%= f.text_field :tag_body, class: 'form-control' %>
+
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
+  <% end %>
+</div>
