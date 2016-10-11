@@ -5,7 +5,7 @@
 
 ### Documentação
 
-Página: https://leonardoscorza.github.io/stack_helper_docs
+Página: https://leonardoscorza.github.io/stack_helper_docs<br/>
 Repositório: https://github.com/leonardoscorza/stack_helper_docs
 
 
