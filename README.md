@@ -2,6 +2,13 @@
 
 ![alt tag](https://codeship.com/projects/eeb1a760-7173-0134-f7f4-4aa32a10a3f8/status?branch=master)
 
+
+### Documentação
+
+Página: https://leonardoscorza.github.io/stack_helper_docs
+Repositório: https://github.com/leonardoscorza/stack_helper_docs
+
+
 ### Dependências
 
 * Ruby version
