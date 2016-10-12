@@ -9,25 +9,9 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-faded">
-      <div class="container">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
-        </button>
-        <%= link_to 'SocialStack', root_url, class: 'navbar-brand' %>
-        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-          <ul class="nav navbar-nav pull-xs-right">
-            <li class="nav-item"><%= link_to "About", about_path, class: "nav-link #{yield(:about_active)}" %></li>
-            <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-            <% else %>
-              <li class="nav-item"><%= link_to "Sign In", user_session_path, class: "nav-link #{yield(:user_session_active)}" %></li>
-              <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{yield(:new_user_registration_active)}" %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+  <%= render 'layouts/navbar' %>
+
   	<div class="container <%= controller_name %> <%= action_name %> ">
       <div class="row">
         <div class="col-lg-9">
@@ -43,9 +27,8 @@
       </div>
 
       <hr>
-      <footer>
-        <p>&copy; SocialStack <%= Time.now.year %></p>
-      </footer>
+
+      <%= render 'layouts/footer' %>
 
   	</div>
   </body>
