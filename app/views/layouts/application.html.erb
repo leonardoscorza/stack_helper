@@ -14,22 +14,11 @@
 
   	<div class="container <%= controller_name %> <%= action_name %> ">
       <div class="row">
-        <div class="col-lg-9">
-    	     <%= yield %>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="sidebar">
-            <h3>Sidebar</h3>
-            <h4>Blábláblá</h4>
-          </div>
-        </div>
+        <%= yield %>
       </div>
-
-      <hr>
 
       <%= render 'layouts/footer' %>
 
-  	</div>
+      </div>
   </body>
 </html>
