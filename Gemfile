@@ -48,6 +48,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do

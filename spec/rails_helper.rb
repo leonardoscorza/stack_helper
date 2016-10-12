@@ -54,4 +54,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Include FactoryGirl methods like 'create' and 'build'
+  config.include FactoryGirl::Syntax::Methods
+
+  # Include Devise method like 'sign_in'
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
