@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
 
   get 'home/index'
-  get 'home/about'
+  get 'about' => 'home#about', as: :about
 end
