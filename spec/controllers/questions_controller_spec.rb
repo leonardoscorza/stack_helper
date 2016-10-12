@@ -1,6 +1,22 @@
 require 'rails_helper'
 
 describe QuestionsController, type: :controller do
+  describe "GET #edit" do
+    let(:question) { create(:question) }
+    before do
+      sign_in create(:user)
+      get :edit, params: { id: question, question: attributes_for(:question) }
+    end
+
+    it "render :edit view" do
+      expect(response).to render_template(:edit)
+    end
+
+    it "assigns the requested object to @question" do
+      expect(assigns(:question)).to eq(question)
+    end
+  end
+
   describe "GET #show" do
     let(:question) { create(:question_with_answers) }
     before { get :show, params: { id: question } }
@@ -9,14 +25,17 @@ describe QuestionsController, type: :controller do
       expect(response).to render_template(:show)
     end
 
-    it "assigns the requested objects to the instance variables" do
+    it "assigns the requested objects to @question and @answers" do
       expect(assigns(:question)).to eq(question)
       expect(assigns(:answers)).to eq(question.answers)
     end
   end
 
   describe "GET #new" do
-    before { get :new }
+    before do
+      sign_in create(:user)
+      get :new
+    end
 
     it "render :new view" do
       expect(response).to render_template(:new)
@@ -34,6 +53,11 @@ describe QuestionsController, type: :controller do
       it "creates a new question" do
         expect{ post :create, params:
           { question: attributes_for(:question) } }.to change(Question, :count).by(1)
+      end
+
+      it "associa the question to a user" do
+        post :create, params: { question: attributes_for(:question) }
+        expect(assigns(:question).user_id).to_not be_nil
       end
     end
 
