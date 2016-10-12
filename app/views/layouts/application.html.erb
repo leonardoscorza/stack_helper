@@ -18,8 +18,12 @@
         <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
           <ul class="nav navbar-nav pull-xs-right">
             <li class="nav-item"><%= link_to "About", about_path, class: "nav-link #{yield(:about_active)}" %></li>
-            <li class="nav-item"><%= link_to "Sign In", user_session_path, class: "nav-link #{yield(:user_session_active)}" %></li>
-            <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{yield(:new_user_registration_active)}" %></li>
+            <% if user_signed_in? %>
+              <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "Sign In", user_session_path, class: "nav-link #{yield(:user_session_active)}" %></li>
+              <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{yield(:new_user_registration_active)}" %></li>
+            <% end %>
           </ul>
         </div>
       </div>
