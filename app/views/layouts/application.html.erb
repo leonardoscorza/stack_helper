@@ -9,8 +9,16 @@
   </head>
 
   <body>
-  	<div class="container">
-    	<%= yield %>
-  	</div>
+
+  <%= render 'layouts/navbar' %>
+
+  	<div class="container <%= controller_name %> <%= action_name %> ">
+      <div class="row">
+        <%= yield %>
+      </div>
+
+      <%= render 'layouts/footer' %>
+
+      </div>
   </body>
 </html>
