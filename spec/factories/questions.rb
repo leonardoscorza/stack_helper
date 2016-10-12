@@ -8,16 +8,16 @@ FactoryGirl.define do
     trait :invalid do
       title nil
     end
-    
+
     factory :question_with_answers do
       # Create a local variable with the number of answers to create
       transient do
         answers_count 5
       end
 
-      # Throuh evaluator we access the transient counter, and say that
+      # Through evaluator we access the transient counter, and say that
       # we would like to create answers (create_list 1st argument) that
-      # belong to my question created above (create_list 3th argument).
+      # belongs to the question created above (create_list 3th argument).
       after(:create) do |question, evaluator|
         create_list(:answer, evaluator.answers_count, question: question)
       end
