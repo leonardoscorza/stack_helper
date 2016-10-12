@@ -1,2 +1,16 @@
-<h1>Question#index</h1>
-<p>Find me in app/views/question/index.html.erb</p>
+<% @questions.each do |question| %>
+  <div class="card card-block">
+    <span><%= question.title %></span><br></br>
+    <span>Tags: <%= question.tag_body %></span>
+    <div>
+      <%= link_to "ver", question %>
+      <% if current_user == question.user %>
+        <%= link_to "editar", edit_question_path(question) %>
+        <%= link_to "deletar",
+                    question,
+                    method: :delete,
+                    data: { confirm: "Tem certeza que deseja excluir esta pergunta?" } %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
