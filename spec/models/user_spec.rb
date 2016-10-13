@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-	subject { described_class.new(name: "Example", email: "foo@bar.com", password: "foobar") }
-	
-	describe 'Validations' do
-		it 'is valid with valid attributes' do		
+	subject { User.new(name: "Example", email: "foo@bar.com", password: "foobar") }
+
+	describe '#validations' do
+		it 'is valid with valid attributes' do
 			expect(subject).to be_valid
 		end
 
@@ -19,20 +19,20 @@ RSpec.describe User, type: :model do
 		end
 	end
 
-	describe 'Associations' do
+	describe '#associations' do
 	  it 'has many notifications' do
-	  	assc = described_class.reflect_on_association(:notifications)
+	  	assc = User.reflect_on_association(:notifications)
 		  expect(assc.macro).to eq(:has_many)
 	  end
 
 	  it 'has many answers' do
-	  	assc = described_class.reflect_on_association(:answers)
+	  	assc = User.reflect_on_association(:answers)
 		  expect(assc.macro).to eq(:has_many)
 	  end
 
 	  it 'has many questions' do
-	  	assc = described_class.reflect_on_association(:questions)
+	  	assc = User.reflect_on_association(:questions)
 		  expect(assc.macro).to eq(:has_many)
 	  end
 	end
-end	
+end

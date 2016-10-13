@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  subject { described_class.new(title: "Examle", text: "Some text", tag_body: "#ruby #rails") }
+  subject { Question.new(user_id: 1, title: "Example", text: "Some text", tag_body: "#ruby #rails") }
 
-  describe 'Validations' do
-		it 'is valid with valid attributes' do		
+  describe '#validations' do
+		it 'is valid with valid attributes' do
 			expect(subject).to be_valid
 		end
 
@@ -24,14 +24,14 @@ RSpec.describe Question, type: :model do
 		end
 	end
 
-  describe 'Associations' do
+  describe '#associations' do
 	  it 'belongs to a user' do
-	  	assc = described_class.reflect_on_association(:user)
+	  	assc = Question.reflect_on_association(:user)
 		  expect(assc.macro).to eq(:belongs_to)
 	  end
 
 	  it 'has and belongs to many' do
-	  	assc = described_class.reflect_on_association(:hashtags)
+	  	assc = Question.reflect_on_association(:hashtags)
 		  expect(assc.macro).to eq(:has_and_belongs_to_many)
 	  end
 	end
