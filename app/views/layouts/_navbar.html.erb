@@ -6,6 +6,12 @@
     <%= link_to 'SocialStack', root_url, class: 'navbar-brand' %>
     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
       <ul class="nav navbar-nav pull-xs-right">
+        <% if current_user.image.present? %>
+          <li class="nav-item"><%= image_tag(current_user.image, size: "40") %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to current_user.name, edit_user_registration_path, class: "nav-link #{yield(:about_active)}" %></li>
+        <% end %>
         <li class="nav-item"><%= link_to "About", about_path, class: "nav-link #{yield(:about_active)}" %></li>
         <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
