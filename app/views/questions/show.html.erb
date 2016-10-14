@@ -1,0 +1,9 @@
+<h4><%= @question.title %></h4>
+
+<div class="card card-block">
+  <span class="card-text"><%= @question.text %></span>
+</div>
+
+<div>
+  Postado por <%= link_to @user.name, '#' %>
+</div>
