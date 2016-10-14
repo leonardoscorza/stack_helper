@@ -282,6 +282,7 @@ DEPENDENCIES
   devise
   devise-i18n
   factory_girl_rails (~> 4.7.0)
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -307,4 +308,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.2
+   1.13.3
