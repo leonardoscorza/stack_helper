@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Answer, type: :model do
-  subject { Answer.new(user_id: 1, text: "Some text") }
+  subject { Answer.new(question_id: 1, user_id: 1, text: "Some text") }
 
   describe '#validations' do
 		it 'is valid with valid attributes' do
