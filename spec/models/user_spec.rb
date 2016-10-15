@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 	subject { described_class.new(name: "Example", email: "foo@bar.com", password: "foobar") }
-	
+
 	describe 'Validations' do
-		it 'is valid with valid attributes' do		
+		it 'is valid with valid attributes' do
 			expect(subject).to be_valid
 		end
 
@@ -16,6 +16,17 @@ RSpec.describe User, type: :model do
 		it 'is not valid without an password' do
 			subject.password = nil
 			expect(subject).to_not be_valid
+		end
+
+		it "is not valid with nil value" do
+			subject.admin = nil
+			expect(subject).to_not be_valid
+		end
+	end
+
+	context "when admin is seted" do
+		it "is false by default" do
+			expect(subject.admin).to be_falsey
 		end
 	end
 
@@ -35,4 +46,4 @@ RSpec.describe User, type: :model do
 		  expect(assc.macro).to eq(:has_many)
 	  end
 	end
-end	
+end
