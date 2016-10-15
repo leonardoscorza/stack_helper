@@ -2,34 +2,38 @@
 <br>
 <div class="col-lg-4 col-md-6 offset-lg-4 offset-md-3">
   <div class="card">
-    <div class="card-header p-b-0">
-      <h5 class="card-title">Log in</h5>
+    <div class="card-header p-b-0 text-xs-center">
+      <h5>Log in</h5>
     </div>
     <div class="card-block">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><%= fa_icon 'envelope' %></div>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: :email %>
         </div>
-
-        <div class="form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><%= fa_icon 'asterisk' %></div>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: :password %>
         </div>
+      </div>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="form-group">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end -%>
+      <% if devise_mapping.rememberable? -%>
+      <div class="form-group">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+      <% end -%>
 
-        <div class="actions">
-          <%= f.submit "Log in", class: 'btn btn-primary' %>
-          <%= render "devise/shared/omniauth" %>
-        </div>
-
+      <div class="actions">
+        <%= f.submit "Log in", class: 'btn btn-primary btn-block' %>
+        <%= render "devise/shared/omniauth" %>
         <%= render "devise/shared/links" %>
+      </div>
+
+
 
       <% end %>
     </div>

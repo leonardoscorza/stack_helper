@@ -41,6 +41,8 @@ gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'devise-i18n'
 # I18n for Rails Admin
 gem 'rails_admin-i18n'
+# the font-awesome font bundled as an asset for the rails asset pipeline
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
