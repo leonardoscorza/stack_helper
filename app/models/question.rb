@@ -2,7 +2,7 @@ class Question < ApplicationRecord
 	belongs_to :user
 	validates :user_id, :title, :text, :tag_body, presence: true
 	has_and_belongs_to_many :hashtags
-	has_many :answers
+	has_many :answers, dependent: :destroy
 
 	after_create do
 		question_tags = self.tag_body.scan(/#\w+/)

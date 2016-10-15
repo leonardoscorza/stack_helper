@@ -1,0 +1,7 @@
+<%= form_for answer, remote: true, authenticity_token: true do |f| %>
+
+  <%= f.label :text, "Resposta" %>
+  <%= f.text_area :text, class: 'form-control', data: { textarea: "answer"}%>
+  <%= f.hidden_field :question_id, value: question.id %>
+  <%= f.submit "Responder", class: "btn btn-primary", data:{send: "answer"} %>
+<% end %>

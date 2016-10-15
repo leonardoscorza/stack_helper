@@ -1,9 +1,24 @@
-<h4><%= @question.title %></h4>
+<div class="">
+  <h4><%= @question.title %></h4>
 
 <div class="card card-block">
   <span class="card-text"><%= @question.text %></span>
 </div>
-
 <div>
   Postado por <%= link_to @user.name, '#' %>
+</div>
+<br>
+
+<div class="panel panel-default">
+  <% if @question.answers.any? %>
+    <div class="panel-body" id="answers">
+      <%= render partial: 'answers/answer', collection: @question.answers %>
+    </div>
+  <%else%>
+    <div class="panel-body hidden" id="answers">
+    </div>
+  <%end%>
+</div>
+
+  <%= render partial: 'answers/answer_form', locals: { answer: @answer, question: @question }%>
 </div>
