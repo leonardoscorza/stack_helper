@@ -58,6 +58,9 @@ RSpec.configure do |config|
   # Include FactoryGirl methods like 'create' and 'build'
   config.include FactoryGirl::Syntax::Methods
 
-  # Include Devise method like 'sign_in'
+  # Include Devise methods like 'sign_in'
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  # Add warden method like 'login_as' to use in integration tests 
+  config.include Warden::Test::Helpers
 end

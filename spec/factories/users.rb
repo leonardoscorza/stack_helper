@@ -9,5 +9,9 @@ FactoryGirl.define do
     email
     name "User"
     password "foobar"
+
+    trait :admin do
+      admin true
+    end
   end
 end
