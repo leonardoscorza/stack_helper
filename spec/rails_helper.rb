@@ -60,4 +60,6 @@ RSpec.configure do |config|
 
   # Include Devise method like 'sign_in'
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  config.include Warden::Test::Helpers
 end
