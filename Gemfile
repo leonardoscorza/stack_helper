@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
@@ -42,6 +41,8 @@ gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'devise-i18n'
 # I18n for Rails Admin
 gem 'rails_admin-i18n'
+# the font-awesome font bundled as an asset for the rails asset pipeline
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +53,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'spring-commands-rspec'
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+  gem 'capybara'
 end
 
 group :development do
