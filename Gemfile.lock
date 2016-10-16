@@ -63,10 +63,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     acts_as_votable (0.10.0)
-    arel (7.1.4)
-    autoprefixer-rails (6.5.1)
     addressable (2.4.0)
-    arel (7.1.2)
+    arel (7.1.4)
     autoprefixer-rails (6.5.0.2)
       execjs
     awesome_print (1.7.0)
@@ -325,8 +323,8 @@ DEPENDENCIES
   devise
   devise-i18n
   factory_girl_rails (~> 4.7.0)
-  guard-rspec (~> 4.7, >= 4.7.3)
   font-awesome-rails
+  guard-rspec (~> 4.7, >= 4.7.3)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
