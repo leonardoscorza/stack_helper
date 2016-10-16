@@ -9,8 +9,6 @@ class AnswersController < ApplicationController
         answer: answer.text,
         user: answer.user.name
       head :ok
-    else
-      render 'new'
     end
   end
 

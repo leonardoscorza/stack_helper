@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index'
   get 'about' => 'home#about', as: :about
+
+  mount ActionCable.server => '/cable'
 end
