@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Hashtag, type: :model do
-  subject { described_class.new(name: "rails") }
+  subject { Hashtag.new(name: "rails") }
 
-  describe 'Validations' do
-		it 'is valid with valid attributes' do		
+  describe '#validations' do
+		it 'is valid with valid attributes' do
 			expect(subject).to be_valid
 		end
 
@@ -14,7 +14,7 @@ RSpec.describe Hashtag, type: :model do
 		end
 	end
 
-  describe 'Associations' do
+  describe '#associations' do
 	  it 'has and belongs to many' do
 	  	assc = described_class.reflect_on_association(:questions)
 		  expect(assc.macro).to eq(:has_and_belongs_to_many)
