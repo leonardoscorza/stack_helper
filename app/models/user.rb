@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :answers
   has_many :questions
   validates :name, presence: true, length: { maximum: 50 }
+  validate :validate_admin
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -17,4 +18,10 @@ class User < ApplicationRecord
        user.image = auth.info.image
      end
   end
+
+  private
+
+    def validate_admin
+      errors.add(:admin, "cannot be nil") if admin.nil?
+    end
 end

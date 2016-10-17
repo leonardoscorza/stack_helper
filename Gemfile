@@ -22,7 +22,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -41,6 +41,8 @@ gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'devise-i18n'
 # I18n for Rails Admin
 gem 'rails_admin-i18n'
+# the font-awesome font bundled as an asset for the rails asset pipeline
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +51,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'rails-controller-testing'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+  gem 'capybara'
 end
 
 group :development do
@@ -59,6 +64,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry', '~> 0.10.4'
+  gem 'pry-byebug'
   gem 'awesome_print'
   gem 'better_errors'
 end
