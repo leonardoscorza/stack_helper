@@ -5,6 +5,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.file_field :avatar %><br />
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
