@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161018134623) do
-=======
-ActiveRecord::Schema.define(version: 20161015020609) do
->>>>>>> upstream/master
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -74,14 +70,11 @@ ActiveRecord::Schema.define(version: 20161015020609) do
     t.string   "image"
     t.string   "provider"
     t.string   "uid"
-<<<<<<< HEAD
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-=======
     t.boolean  "admin",                  default: false, null: false
->>>>>>> upstream/master
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
