@@ -1,19 +1,34 @@
-<h1>Home#index</h1>
-<p>Nossa Primeiro Página</p>
-
+<!-- List of questions -->
 <div class="col-md-9 col-sm-8">
-	<div class="card card-block">
-		<h4 class="card-title">Home#index</h4>
-		<p class="card-text">Nossa primeira página</p>
-		<%=	link_to "New Question", new_question_path %>
-		|
-		<%=	link_to "All Questions", questions_path %>
+	<div class="m-b-1">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="type your question(s) here">
+			<span class="input-group-btn">
+				<button class="btn btn-outline-success" type="button">Search</button>
+			</span>
+		</div>
 	</div>
 </div>
 
+<!-- Sidebar with ranking -->
 <div class="col-md-3 col-sm-4">
-	<div class="sidebar">
-		<h3>Sidebar</h3>
-		<h4>Insert #hashtags here</h4>
+	<div class="card">
+		<h3 class="card-header m-b-0">Ranking</h3>
+		<div class="nav">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<span class="tag tag-primary tag-pill pull-xs-right">11</span>
+					User A
+				</li>
+				<li class="list-group-item">
+					<span class="tag tag-primary tag-pill pull-xs-right">22</span>
+					User B
+				</li>
+				<li class="list-group-item">
+					<span class="tag tag-primary tag-pill pull-xs-right">33</span>
+					User C
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
