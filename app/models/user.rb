@@ -7,8 +7,12 @@ class User < ApplicationRecord
   has_many :notifications
   has_many :answers
   has_many :questions
+  has_attached_file :avatar, styles: { small: "40x40>" }, :default_url => "/assets/:style/avatar_default_:style.png"
+  validates_attachment_content_type :avatar, :content_type => %w(image/jpg image/jpeg image/png)#{}/\Aimage\/.*\z/
   validates :name, presence: true, length: { maximum: 50 }
   #validate :validate_admin
+
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -11,10 +11,12 @@
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><%= fa_icon 'user' %></div>
-          <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: :name %>
-        </div>
+          <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: :name %><br />
+          </div>
       </div>
-
+      <div class="field">
+          <%= f.file_field :avatar %><br /><br />
+      </div>
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><%= fa_icon 'envelope' %></div>

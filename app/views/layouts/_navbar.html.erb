@@ -1,25 +1,29 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-  <button class="navbar-toggler hidden-sm-up pull-right bg-primary" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-    &#9776;
-  </button>
-  <%= link_to 'SocialStack', root_url, class: 'navbar-brand' %>
-  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar">
-    <ul class="nav navbar-nav pull-right">
-      <li class="nav-item">
-        <%= link_to "About", about_path, class: "nav-link #{yield(:about_active)}" %>
-      </li>
-      <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to "Sign In", user_session_path, class: "nav-link #{yield(:user_session_active)}" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{yield(:new_user_registration_active)}" %>
-      </li>
-      <% end %>
-    </ul>
+
+    <button class="navbar-toggler hidden-sm-up pull-right bg-primary" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <%= link_to 'SocialStack', root_url, class: 'navbar-brand' %>
+    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+      <ul class="nav navbar-nav pull-xs-right">
+        <% if user_signed_in? %>
+          <% if current_user.provider == "facebook" %>
+            <li class="nav-item"><%= image_tag(current_user.image, class: "img-circle") %></li>
+          <% else %>
+            <li class="nav-item"><%= image_tag(current_user.avatar.url(:small), class: "img-circle") %></li>
+          <% end %>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to current_user.name, edit_user_registration_path, class: "nav-link #{yield(:about_active)}" %></li>
+        <% end %>
+        <li class="nav-item"><%= link_to "About", about_path, class: "nav-link #{yield(:about_active)}" %></li>
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Sign In", user_session_path, class: "nav-link #{yield(:user_session_active)}" %></li>
+          <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{yield(:new_user_registration_active)}" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
