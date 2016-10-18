@@ -1,0 +1,17 @@
+/* fix responsive nav-item collapsed */
+@media(max-width:34em) {
+    .navbar .navbar-brand {
+        float:none;
+        display: block;
+    }
+    .navbar .navbar-nav>.nav-item {
+        float: none;
+        margin-left: .1rem;
+    }
+    .navbar .navbar-nav {
+        float:none !important;
+    }
+}
+
+/* fix navbar when will overlay other content */
+body { padding-top: 70px; }
