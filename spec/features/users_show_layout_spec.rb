@@ -5,7 +5,7 @@ describe "Home index view" do
     let(:user) { create(:user) }
     before do
       login_as user
-      visit users_url(user)
+      visit user_url(user)
     end
 
     it "displays 'project name'" do
