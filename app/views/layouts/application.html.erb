@@ -4,10 +4,30 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>SocialStack</title>
+
+
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="description" content="">
+    <link rel="canonical" href="">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:card" content="sumary">
+    <meta name="twitter:domain" content="">
+    <meta name="twitter:title" content="<%= full_title(yield(:title)) %>">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:url" content="">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="<%= full_title(yield(:title)) %>">
+    <meta property="og:description" content="">
+
+
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
