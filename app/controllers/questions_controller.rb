@@ -41,6 +41,7 @@ class QuestionsController < ApplicationController
   def show
     @user = @question.user
     @answers = @question.answers
+    @answer = Answer.new
   end
 
   private
