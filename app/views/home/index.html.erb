@@ -8,10 +8,22 @@
 			</span>
 		</div>
 	</div>
+	<div class="center">
+		<%= link_to "Perguntar", new_question_path, class: "btn btn-primary btn-lg btn-xlarge btn-center" %>
+	</div><br />
 	<% @questions.each do |question| %>
 		<div class="card card-block">
 			<h4 class="card-title"><%= link_to question.title, question %></h4>
 			<p class="card-text"><%= question.text %></p>
+			<span>
+				<% if current_user == question.user %>
+				<%= link_to "editar", edit_question_path(question) %>
+				<%= link_to "deletar",
+										question,
+										method: :delete,
+										data: { confirm: "Tem certeza que deseja excluir esta pergunta?" } %>
+			<% end %>
+			 </span>
 		</div>
 	<% end %>
 </div>

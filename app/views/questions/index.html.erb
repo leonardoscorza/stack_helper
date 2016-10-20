@@ -1,6 +1,7 @@
 <% @questions.each do |question| %>
   <div class="card card-block">
-    <span><%= question.title %></span><br></br>
+		<h4 class="card-title"><%= link_to question.title, question %></h4>
+    <p><%= question.text %></p><br />
     <span>Tags: <%= question.tag_body %></span>
     <div>
       <%= link_to "ver", question %>
