@@ -6,24 +6,24 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 
 
-    <title><%= full_title(yield(:title)) %></title>
-    <meta name="description" content="">
+    <title><%= title(yield(:title)) %></title>
+    <meta name="description" content="<%= description(yield(:meta_description)) %>">
     <link rel="canonical" href="">
 
     <!-- Twitter cards -->
     <meta name="twitter:card" content="sumary">
     <meta name="twitter:domain" content="">
-    <meta name="twitter:title" content="<%= full_title(yield(:title)) %>">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="<%= title(yield(:title)) %>">
+    <meta name="twitter:description" content="<%= description(yield(:meta_description)) %>">
+    <meta name="twitter:url" content="<%= current_url %>">
+    <meta name="twitter:image" content="">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= title(yield(:title)) %>">
+    <meta property="og:description" content="<%= description(yield(:meta_description)) %>">
+    <meta property="og:url" content="<%= current_url %>">
     <meta property="og:image" content="">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="<%= full_title(yield(:title)) %>">
-    <meta property="og:description" content="">
-
 
     <%= csrf_meta_tags %>
 

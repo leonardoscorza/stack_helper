@@ -1,4 +1,6 @@
 <% provide(:title, "#{first_tag(@question)} - #{@question.title}") %>
+<% provide(:meta_description, truncate_question_text(@question.text)) %>
+
 <div class="">
   <h4><%= @question.title %></h4>
 
