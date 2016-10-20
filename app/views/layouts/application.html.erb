@@ -5,27 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 
-
+    <!-- TODO: Update 'StackHelper' whit the app definitive name, when defined -->
     <title><%= title(yield(:title)) %></title>
-    <meta name="description" content="<%= description(yield(:meta_description)) %>">
-    <link rel="canonical" href="">
-
-    <!-- Twitter cards -->
-    <meta name="twitter:card" content="sumary">
-    <meta name="twitter:domain" content="">
-    <meta name="twitter:title" content="<%= title(yield(:title)) %>">
-    <meta name="twitter:description" content="<%= description(yield(:meta_description)) %>">
-    <meta name="twitter:url" content="<%= current_url %>">
-    <meta name="twitter:image" content="">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="<%= title(yield(:title)) %>">
-    <meta property="og:description" content="<%= description(yield(:meta_description)) %>">
-    <meta property="og:url" content="<%= current_url %>">
-    <meta property="og:image" content="">
-
-    <%= csrf_meta_tags %>
+    <%= render 'shared/meta_tags' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
