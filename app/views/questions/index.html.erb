@@ -4,13 +4,14 @@
     <p><%= question.text %></p><br />
     <span>Tags: <%= question.tag_body %></span>
     <div>
-      <%= link_to "ver", question %>
+      <%= link_to "ver", question, class: "btn btn-primary btn-sm" %>
       <% if current_user == question.user %>
-        <%= link_to "editar", edit_question_path(question) %>
+        <%= link_to "editar", edit_question_path(question), class: "btn btn-primary btn-sm"%>
         <%= link_to "deletar",
                     question,
                     method: :delete,
-                    data: { confirm: "Tem certeza que deseja excluir esta pergunta?" } %>
+                    data: { confirm: "Tem certeza que deseja excluir esta pergunta?" },
+                    class: "btn btn-primary btn-sm" %>
       <% end %>
     </div>
   </div>

@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="center">
-		<%= link_to "Perguntar", new_question_path, class: "btn btn-primary btn-lg btn-xlarge btn-center" %>
+		<%= link_to "New Question", new_question_path, class: "btn btn-primary btn-lg btn-xlarge btn-center" %>
 	</div><br />
 	<% @questions.each do |question| %>
 		<div class="card card-block">
@@ -17,11 +17,11 @@
 			<p class="card-text"><%= question.text %></p>
 			<span>
 				<% if current_user == question.user %>
-				<%= link_to "editar", edit_question_path(question) %>
+				<%= link_to "editar", edit_question_path(question), class: "btn btn-primary btn-sm" %>
 				<%= link_to "deletar",
 										question,
 										method: :delete,
-										data: { confirm: "Tem certeza que deseja excluir esta pergunta?" } %>
+										data: { confirm: "Tem certeza que deseja excluir esta pergunta?" }, class: "btn btn-primary btn-sm" %>
 			<% end %>
 			 </span>
 		</div>
