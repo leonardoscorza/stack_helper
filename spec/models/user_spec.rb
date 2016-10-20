@@ -3,6 +3,12 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 	subject { User.new(name: "Example", email: "foo@bar.com", password: "foobar") }
 
+	context "when admin is seted" do
+		it "is false by default" do
+	 		expect(subject.admin).to be_falsey
+	 	end
+	end
+
 	describe '#validations' do
 		it 'is valid with valid attributes' do
 			expect(subject).to be_valid
@@ -18,10 +24,10 @@ RSpec.describe User, type: :model do
 			expect(subject).to_not be_valid
 		end
 
-		it "is not valid with nil value" do
-			subject.admin = nil
-			expect(subject).to_not be_valid
-		end
+		#it "is not valid with admin = nil" do
+		#	subject.admin = nil
+		#	expect(subject).to_not be_valid
+		#end
 	end
 
 	describe '#associations' do
