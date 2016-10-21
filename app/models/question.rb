@@ -6,7 +6,7 @@ class Question < ApplicationRecord
 
 	def self.search(search)
 		if search
-			where("title LIKE :search OR text LIKE :search OR tab_body LIKE :search ", search: "%#{search}%")
+			where("title LIKE :search OR text LIKE :search OR tag_body LIKE :search ", search: "%#{search}%")
 		else
 			all
 		end
