@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy, :new]
 
   def index
-    @questions = Question.all
+    @questions = Question.search(params[:search])
   end
 
   def new

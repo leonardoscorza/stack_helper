@@ -2,10 +2,12 @@
 <div class="col-md-9 col-sm-8">
 	<div class="m-b-1">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="type your question(s) here">
+		<%= form_tag questions_path, method: :get do %>
+			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "type your question(s) here" %>
 			<span class="input-group-btn">
-				<button class="btn btn-outline-success" type="button">Search</button>
+				<%= submit_tag "Search", class: "btn btn-outline-success"%>
 			</span>
+			<% end %>
 		</div>
 	</div>
 	<div class="center">
