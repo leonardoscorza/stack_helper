@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :question do
     title "This is the question title"
-    text "This is the question text"
+    text "This is the question text" * 20
     tag_body "#ruby #rails #javascript"
     user
 

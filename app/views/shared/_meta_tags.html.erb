@@ -1,0 +1,21 @@
+<meta name="description" content="<%= description(yield(:meta_description)) %>">
+
+<!-- Twitter cards -->
+<meta name="twitter:card" content="sumary">
+<!-- TODO: Waiting definitive domain definition. -->
+<meta name="twitter:domain" content="">
+<meta name="twitter:title" content="<%= title(yield(:title)) %>">
+<meta name="twitter:description" content="<%= description(yield(:meta_description)) %>">
+<meta name="twitter:url" content="<%= current_url %>">
+<!-- TODO: Waiting logo definition. -->
+<meta name="twitter:image" content="">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%= title(yield(:title)) %>">
+<meta property="og:description" content="<%= description(yield(:meta_description)) %>">
+<meta property="og:url" content="<%= current_url %>">
+<!-- TODO: Waiting logo definition. -->
+<meta property="og:image" content="">
+
+<%= csrf_meta_tags %>

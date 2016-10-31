@@ -55,12 +55,15 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # Include FactoryGirl methods like 'create' and 'build'
+  # Include FactoryGirl methods like 'create' and 'build'.
   config.include FactoryGirl::Syntax::Methods
 
-  # Include Devise methods like 'sign_in'
+  # Include Devise methods like 'sign_in'.
   config.include Devise::Test::ControllerHelpers, type: :controller
 
-  # Add warden method like 'login_as' to use in integration tests 
+  # Add to set Warden::Proxy (used in tests whit Devise).
+  config.include Devise::Test::ControllerHelpers, type: :view
+
+  # Add warden method like 'login_as' to use in integration tests.
   config.include Warden::Test::Helpers
 end
